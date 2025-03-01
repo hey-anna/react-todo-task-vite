@@ -1,15 +1,16 @@
 import { createBrowserRouter } from "react-router-dom";
+import SiteWrapper from "../layouts/SiteWrapper";
 import Home from "../views/Home";
-// import About from "./components/About";
 import TodoList from "../views/TodoList";
 // import ErrorPage from "./components/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <SiteWrapper />,
     // errorElement: <ErrorPage />,
     children: [
+      { path: "", element: <Home /> },
       {
         path: "TodoList",
         element: <TodoList />,
