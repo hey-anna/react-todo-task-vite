@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import SiteWrapper from "../layouts/SiteWrapper";
 import Home from "../views/Home";
-import TodoList from "../views/TodoList";
+import TodoPage from "../views/TodoPage";
 // import ErrorPage from "./components/ErrorPage";
 
 const router = createBrowserRouter([
@@ -12,8 +12,8 @@ const router = createBrowserRouter([
     children: [
       { path: "", element: <Home /> },
       {
-        path: "TodoList",
-        element: <TodoList />,
+        path: "todo_page",
+        element: <TodoPage />,
       },
     ],
   },
