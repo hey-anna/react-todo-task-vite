@@ -10,24 +10,6 @@ interface TodoInputProps {
 const TodoInput: React.FC<TodoInputProps> = ({ onAddTodo }) => {
   const [input, setInput] = useState("");
 
-  // 입력 처리 함수, 유효한 입력값이면 onAddTodo를 호출하고 입력을 초기화
-  // const handleAdd = () => {
-  //   const trimmedInput = input.trim();
-  //   if (trimmedInput) {
-  //     onAddTodo(trimmedInput);
-  //     setInput("");
-  //   }
-  // };
-  // const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
-  //   if (e.key === "Enter") {
-  //     handleAdd(); // 엔터 키를 누를 때 handleAdd를 호출
-  //   }
-  // };
-
-  // const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   setInput(e.target.value); // 사용자 입력을 input 상태에 반영
-  // };
-
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter" && input.trim()) {
       onAddTodo(input);

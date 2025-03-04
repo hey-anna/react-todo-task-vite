@@ -4,19 +4,26 @@ import Home from "../views/Home";
 import TodoPage from "../views/TodoPage";
 // import ErrorPage from "./components/ErrorPage";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <SiteWrapper />,
+      // errorElement: <ErrorPage />,
+      children: [
+        { path: "", element: <Home /> },
+        {
+          path: "todo_page",
+          element: <TodoPage />,
+        },
+      ],
+    },
+  ],
   {
-    path: "/",
-    element: <SiteWrapper />,
-    // errorElement: <ErrorPage />,
-    children: [
-      { path: "", element: <Home /> },
-      {
-        path: "todo_page",
-        element: <TodoPage />,
-      },
-    ],
-  },
-]);
+    future: {
+      v7_relativeSplatPath: true,
+    },
+  }
+);
 
 export default router;
